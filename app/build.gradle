@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "24.0.2"
     defaultConfig {
         applicationId "com.example.android.wearable.wear.wearoauth"
-        minSdkVersion 24
-        targetSdkVersion 24
+        minSdkVersion 25
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -22,6 +22,6 @@ android {
     }
 }
 dependencies {
-    compile 'com.google.android.support:wearable:2.0.0-beta1'
-    compile 'com.google.android.gms:play-services-wearable:9.8.0'
+    compile 'com.google.android.support:wearable:2.0.0'
+    compile 'com.google.android.gms:play-services-wearable:10.0.1'
 }

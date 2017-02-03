@@ -24,6 +24,11 @@
         android:allowBackup="false"
         android:label="wearoauth"
         android:theme="@android:style/Theme.DeviceDefault">
+
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
         <uses-library
             android:name="com.google.android.wearable"
             android:required="false" />

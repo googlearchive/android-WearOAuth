@@ -62,6 +62,10 @@ public class WearOAuthActivity extends Activity {
     // auth code exchange.
     private static final String HTTP_REDIRECT_URL = "https://www.android.com/wear/3p_auth";
 
+    // TODO Add your client id and client secret here (for dev purposes only).
+    private static final String CLIENT_ID = "";
+    private static final String CLIENT_SECRET = "";
+
     private OAuthClient mOAuthClient;
 
     @Override
@@ -81,8 +85,8 @@ public class WearOAuthActivity extends Activity {
 
         performRequest(
                 "https://accounts.google.com/o/oauth2/v2/auth?response_type=code"
-                        // TODO Add your client ID to the request URL parameters below.
-                        + "&client_id=<your_client_id_here>"
+                        + "&client_id="
+                        + CLIENT_ID
                         + "&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login"
                         + "&redirect_uri=" + redirectUrl(),
                 new GoogleOAuth2RequestCallback(this));
@@ -177,11 +181,9 @@ public class WearOAuthActivity extends Activity {
             nameValuePair.add(new BasicNameValuePair("grant_type", "authorization_code"));
             nameValuePair.add(new BasicNameValuePair("code", code));
             nameValuePair.add(new BasicNameValuePair("redirect_uri", redirectUrl()));
-            // TODO Add your client id here.
-            nameValuePair.add(new BasicNameValuePair("client_id", "<your_client_id_here>"));
-            // TODO Add your client secret here (for dev purposes only).
+            nameValuePair.add(new BasicNameValuePair("client_id", CLIENT_ID));
             nameValuePair.add(
-                    new BasicNameValuePair("client_secret", "your_client_secret_here"));
+                    new BasicNameValuePair("client_secret", CLIENT_SECRET));
 
             try {
                 httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
